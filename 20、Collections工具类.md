@@ -1,3 +1,9 @@
+# 20、Collection集合
+
+------
+
+
+
 # 1、Collections是一个操作数组的工具类
 
 # 2、addALL方法
