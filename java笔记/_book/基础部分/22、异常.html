@@ -1,0 +1,799 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>22、异常 · java笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="23、线程实现.html" />
+    
+    
+    <link rel="prev" href="21、map集合.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01、安装.html">
+            
+                <a href="01、安装.html">
+            
+                    
+                    1、安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02、基础知识.html">
+            
+                <a href="02、基础知识.html">
+            
+                    
+                    2、基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03、运算符.html">
+            
+                <a href="03、运算符.html">
+            
+                    
+                    3、逻辑运算符、分支结构、三元运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04、数组.html">
+            
+                <a href="04、数组.html">
+            
+                    
+                    4、数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05、方法.html">
+            
+                <a href="05、方法.html">
+            
+                    
+                    5、方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06、面向对象.html">
+            
+                <a href="06、面向对象.html">
+            
+                    
+                    6、面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07、常用API第一部分.html">
+            
+                <a href="07、常用API第一部分.html">
+            
+                    
+                    7、常用API第一部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="08、继承.html">
+            
+                <a href="08、继承.html">
+            
+                    
+                    8、继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="09、抽象类.html">
+            
+                <a href="09、抽象类.html">
+            
+                    
+                    9、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="10、接口.html">
+            
+                <a href="10、接口.html">
+            
+                    
+                    10、接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="11、多态.html">
+            
+                <a href="11、多态.html">
+            
+                    
+                    11、多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="12、final关键字和权限修饰符.html">
+            
+                <a href="12、final关键字和权限修饰符.html">
+            
+                    
+                    12、final关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="13、内部类.html">
+            
+                <a href="13、内部类.html">
+            
+                    
+                    13、内部类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="14、常用API第二部分.html">
+            
+                <a href="14、常用API第二部分.html">
+            
+                    
+                    14、常用API第二部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="15、Collection集合.html">
+            
+                <a href="15、Collection集合.html">
+            
+                    
+                    15、Collection集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="16、泛型.html">
+            
+                <a href="16、泛型.html">
+            
+                    
+                    16、泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="17、数据结构.html">
+            
+                <a href="17、数据结构.html">
+            
+                    
+                    17、数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="18、list集合.html">
+            
+                <a href="18、list集合.html">
+            
+                    
+                    18、list集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="19、set集合.html">
+            
+                <a href="19、set集合.html">
+            
+                    
+                    19、set集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="20、Collections工具类.html">
+            
+                <a href="20、Collections工具类.html">
+            
+                    
+                    20、Collection集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="21、map集合.html">
+            
+                <a href="21、map集合.html">
+            
+                    
+                    21、map集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.24" data-path="22、异常.html">
+            
+                <a href="22、异常.html">
+            
+                    
+                    22、异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="23、线程实现.html">
+            
+                <a href="23、线程实现.html">
+            
+                    
+                    23.线程实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="24、java线程安全.html">
+            
+                <a href="24、java线程安全.html">
+            
+                    
+                    24、线程安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >22、异常</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22&#x3001;&#x5F02;&#x5E38;">22&#x3001;&#x5F02;&#x5E38;</h1>
+<hr>
+<h1 id="1&#x3001;&#x5F02;&#x5E38;&#x6982;&#x5FF5;">1&#x3001;&#x5F02;&#x5E38;&#x6982;&#x5FF5;</h1>
+<p>&#x6307;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x975E;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;JVM&#x7684;&#x975E;&#x6B63;&#x5E38;&#x505C;&#x6B62;&#xFF0C;</p>
+<p>&#x5F02;&#x5E38;&#x672C;&#x6765;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x4EA7;&#x751F;&#x5F02;&#x5E38;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#x5E76;&#x629B;&#x51FA;&#x3002;</p>
+<h1 id="2&#x3001;&#x5F02;&#x5E38;&#x4F53;&#x7CFB;">2&#x3001;&#x5F02;&#x5E38;&#x4F53;&#x7CFB;</h1>
+<p>&#x6700;&#x9AD8;&#x7236;&#x7C7B;throwable&#xFF0C;&#x5B50;&#x7C7B;error&#x548C;exception</p>
+<h1 id="3&#x3001;&#x5F02;&#x5E38;&#x5206;&#x7C7B;">3&#x3001;&#x5F02;&#x5E38;&#x5206;&#x7C7B;</h1>
+<p>&#x8FD0;&#x884C;&#x671F;&#x5F02;&#x5E38;&#x3001;&#x7F16;&#x8BD1;&#x671F;&#x5F02;&#x5E38;&#x548C;&#x9519;&#x8BEF;</p>
+<p>&#x8FD0;&#x884C;&#x671F;&#x5F02;&#x5E38;&#x53EF;&#x4EE5;&#x4E0D;&#x5904;&#x7406;&#xFF0C;&#x9ED8;&#x8BA4;&#x8BA9;JVM&#x7EC8;&#x6B62;&#x7A0B;&#x5E8F;</p>
+<p>&#x7F16;&#x8BD1;&#x671F;&#x5F02;&#x5E38;&#x5FC5;&#x987B;&#x5904;&#x7406;</p>
+<p>&#x9519;&#x8BEF;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#xFF0C;&#x5FC5;&#x987B;&#x4FEE;&#x6539;&#x4EE3;&#x7801;</p>
+<h1 id="4&#x3001;throwthrows&#x5173;&#x952E;&#x5B57;">4&#x3001;throw/throws&#x5173;&#x952E;&#x5B57;</h1>
+<p>&#x5F02;&#x5E38;&#x5904;&#x7406;&#x5E38;&#x7528;&#x5230;5&#x4E2A;&#x5173;&#x952E;&#x5B57;</p>
+<p>try</p>
+<p>catch</p>
+<p>finally</p>
+<p>throw</p>
+<p>throws</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;throw&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF08;&#x5728;&#x65B9;&#x6CD5;&#x5185;&#x4F7F;&#x7528;&#xFF09;</p>
+<p>&#x5373;&#x65B9;&#x6CD5;&#x5185;&#x67D0;&#x8BED;&#x53E5;&#x53EF;&#x80FD;&#x5F02;&#x5E38;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5F02;&#x5E38;&#x629B;&#x51FA;&#x7ED9;&#x65B9;&#x6CD5;</p>
+<p>&#x65B9;&#x6CD5;&#x5728;&#x5B9A;&#x4E49;&#x65F6;&#x8981;&#x4F7F;&#x7528;throws&#x5173;&#x952E;&#x5B57;&#x63A5;&#x53D7;&#x65B9;&#x6CD5;&#x5185;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x5E76;&#x518D;&#x6B21;&#x629B;&#x51FA;&#x7ED9;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8005;&#x3002;</p>
+<p>&#x540C;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x591A;&#x7EA7;&#x8C03;&#x7528;&#xFF0C;&#x6BCF;&#x4E00;&#x7EA7;&#x90FD;&#x8981;&#x4F7F;&#x7528;throws&#x5173;&#x952E;&#x5B57;&#x63A5;&#x53D7;&#x5E76;&#x4E0A;&#x629B;&#xFF08;&#x6216;&#x8005;try/catch&#x5904;&#x7406;&#xFF09;&#xFF0C;&#x6700;&#x7EC8;&#x629B;&#x51FA;&#x7ED9;main&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x7531;main&#x65B9;&#x6CD5;&#x629B;&#x7ED9;jvm&#xFF0C;&#x6700;&#x540E;&#x4E2D;&#x65AD;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;throw&#x58F0;&#x660E;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x671F;&#x5F02;&#x5E38;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;throws&#x4E0A;&#x629B;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> index)</span> </span>{
+        <span class="hljs-keyword">if</span>(arr == <span class="hljs-keyword">null</span>){
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException(<span class="hljs-string">&quot;&#x4F20;&#x9012;&#x7684;&#x6570;&#x7EC4;&#x4E3A;&#x7A7A;&quot;</span>);
+        }
+
+        <span class="hljs-keyword">if</span>(index&lt;<span class="hljs-number">0</span> || index&gt;arr.length-<span class="hljs-number">1</span>){
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArrayIndexOutOfBoundsException(<span class="hljs-string">&quot;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&quot;</span>);
+        }
+        <span class="hljs-keyword">int</span> ele = arr[index];
+        <span class="hljs-keyword">return</span> ele;
+
+    }
+</code></pre>
+<p>&#x5982;&#x4E0A;&#xFF0C;&#x662F;&#x6267;&#x884C;&#x53C2;&#x6570;&#x5408;&#x6CD5;&#x6027;&#x9A8C;&#x8BC1;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x53C2;&#x6570;&#x4E0D;&#x7B26;&#x5408;&#x8981;&#x6C42;&#xFF0C;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;&#xFF0C;&#x4F46;&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;&#x65F6;&#x8FD0;&#x884C;&#x671F;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x6B64;&#x65B9;&#x6CD5;&#x4E2D;&#x4E0D;&#x7528;&#x4F7F;&#x7528;throws&#x5173;&#x952E;&#x5B57;</p>
+<h1 id="5&#x3001;object&#x975E;&#x7A7A;&#x5224;&#x65AD;">5&#x3001;Object&#x975E;&#x7A7A;&#x5224;&#x65AD;</h1>
+<p>Object&#x7C7B;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5B8C;&#x6210;&#x5BF9;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#x7684;&#x5224;&#x65AD;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">rquireNonNull</span><span class="hljs-params">(T obj)</span><span class="hljs-comment">//&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x662F;null</span>
+<span class="hljs-comment">//&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x5F02;&#x5E38;&#x89E6;&#x53D1;&#x65F6;&#x6253;&#x5370;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6D88;&#x606F;</span>
+</span></code></pre>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">(Object obj)</span></span>{
+        <span class="hljs-comment">//&#x5BF9;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x5408;&#x6CD5;&#x6027;&#x5224;&#x65AD;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;null</span>
+<span class="hljs-comment">//        if(obj==null){</span>
+<span class="hljs-comment">//            throw new NullPointerException(&quot;&#x7A7A;&#x6307;&#x9488;&quot;);</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//        }</span>
+        <span class="hljs-comment">//Objects.requireNonNull(obj);</span>
+        Objects.requireNonNull(obj,<span class="hljs-string">&quot;&#x7A7A;&#x6307;&#x9488;&quot;</span>);
+
+
+    }
+</code></pre>
+<p>&#x6CE8;&#x91CA;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E0E;&#x7B2C;&#x516B;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x7B49;&#x6548;</p>
+<h1 id="6&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;throws">6&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;throws</h1>
+<p>&#x524D;&#x6587;&#x8BF4;&#x8FC7;&#xFF0C;throws&#x53EF;&#x4EE5;&#x628A;&#x5F02;&#x5E38;&#x4EA4;&#x7ED9;&#x8C03;&#x7528;&#x8005;&#xFF0C;&#x8FD9;&#x5373;&#x662F;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x4EA4;&#x7ED9;&#x522B;&#x4EBA;&#x5904;&#x7406;</p>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java">&#x4FEE;&#x9970;&#x7B26; &#x8FD4;&#x56DE;&#x503C; &#x65B9;&#x6CD5;&#x540D;(&#x5F62;&#x53C2;&#x8868;) <span class="hljs-keyword">throws</span> XXXException{
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> XXXException(<span class="hljs-string">&quot;&#x89E6;&#x53D1;&#x65F6;&#x56DB;&#x5904;&#x7684;&#x5B57;&#x7B26;&#x4E32;&quot;</span>);
+}
+</code></pre>
+<p>&#x5373;&#x65B9;&#x6CD5;&#x4E2D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;Exception&#x5F02;&#x5E38;&#xFF0C;&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x662F;&#x5C31;&#x8981;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#xFF08;&#x65B9;&#x6CD5;&#x5185;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#xFF0C;throws&#x4E5F;&#x8981;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#xFF09;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x200B;        1&#x3001;&#x58F0;&#x660E;&#x7684;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;Exception&#x6216;&#x5176;&#x5B50;&#x7C7B;</p>
+<p>&#x200B;        2&#x3001;&#x5982;&#x679C;&#x629B;&#x51FA;&#x7684;&#x591A;&#x4E2A;&#x5F02;&#x5E38;&#x4E2D;&#x6709;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#xFF0C;&#x58F0;&#x660E;&#x7236;&#x7C7B;&#x5373;&#x53EF;</p>
+<p>&#x200B;        3&#x3001;&#x8C03;&#x7528;&#x4E86;&#x58F0;&#x660E;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x5FC5;&#x987B;&#x5904;&#x7406;</p>
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reader</span><span class="hljs-params">(String filename)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-keyword">if</span> (!filename.equals(<span class="hljs-string">&quot;c:\\\\a.txt&quot;</span>)){
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> FileNotFoundException(<span class="hljs-string">&quot;&#x627E;&#x4E0D;&#x5230;&#x6587;&#x4EF6;&quot;</span>);
+        }
+        <span class="hljs-comment">/**
+         * &#x5982;&#x679C;&#x4E0D;&#x662F;.txt&#x7ED3;&#x5C3E;
+         * &#x90A3;&#x4E48;&#x629B;&#x51FA;IO&#x5F02;&#x5E38;&#x5BF9;&#x8C61;
+         */</span>
+        <span class="hljs-keyword">if</span> (!filename.endsWith(<span class="hljs-string">&quot;.txt&quot;</span>)){
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IOException(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&quot;</span>);
+        }
+        System.out.println(<span class="hljs-string">&quot;&#x6CA1;&#x6709;&#x95EE;&#x9898;&quot;</span>);
+    }
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;main&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#x4E5F;&#x8981;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF0C;throws&#x629B;&#x7ED9;&#x865A;&#x62DF;&#x673A;&#x6216;&#x8005;try/catch&#x5904;&#x7406;</p>
+<h1 id="7&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x3001;trycatch">7&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x3001;try/catch</h1>
+<p>try/catch&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x5E76;&#x5904;&#x7406;&#x5F02;&#x5E38;</p>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span>{
+    <span class="hljs-comment">//&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;</span>
+}<span class="hljs-keyword">catch</span>(&#x5B9A;&#x4E49;&#x4EE3;&#x7801;&#x53D8;&#x91CF; &#x7528;&#x6765;&#x63A5;&#x6536;&#x5F02;&#x5E38;){
+    <span class="hljs-comment">//&#x5904;&#x7406;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;</span>
+}
+</code></pre>
+<p>try&#x4E2D;&#x4EE3;&#x7801;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x5C31;&#x4F1A;&#x6267;&#x884C;catch&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+                reader(<span class="hljs-string">&quot;d:\\a.tx&quot;</span>);
+        }<span class="hljs-keyword">catch</span> (IOException e){<span class="hljs-comment">//&#x629B;&#x51FA;&#x4EC0;&#x4E48;&#x5F02;&#x5E38;&#xFF0C;&#x5C31;&#x5B9A;&#x4E49;&#x4EC0;&#x4E48;&#x5F02;&#x5E38;</span>
+            System.out.println(e);
+        }
+            }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reader</span><span class="hljs-params">(String filename)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-keyword">if</span> (!filename.endsWith(<span class="hljs-string">&quot;.txt&quot;</span>)){
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IOException(<span class="hljs-string">&quot;&#x627E;&#x4E0D;&#x5230;&#x6587;&#x4EF6;&quot;</span>);
+        }
+        System.out.println(<span class="hljs-string">&quot;&#x6CA1;&#x6709;&#x95EE;&#x9898;&quot;</span>);
+    }
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5728;reader&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;throws&#x629B;&#x51FA;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;main&#x65B9;&#x6CD5;&#x4E2D;&#x6355;&#x83B7;&#x5E76;&#x5904;&#x7406;&#xFF0C;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x662F;&#x6253;&#x5370;&#x8BE5;&#x5F02;&#x5E38;&#x7684;&#x4FE1;&#x606F;</p>
+<h1 id="8&#x3001;throwable&#x7C7B;&#x4E2D;&#x7684;&#x4E09;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;">8&#x3001;throwable&#x7C7B;&#x4E2D;&#x7684;&#x4E09;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;</h1>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+         * throwable&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x7684;&#x65B9;&#x6CD5;
+         * String toString() &#x8FD4;&#x56DE;&#x6B64;throwable&#x7684;&#x7B80;&#x77ED;&#x63CF;&#x8FF0;
+         * String getMessage() &#x8FD4;&#x56DE;&#x6B64;throwable&#x7684;&#x8BE6;&#x7EC6;&#x6D88;&#x606F;&#x5B57;&#x7B26;&#x4E32;
+         * String printStackTrace() JVM&#x6253;&#x5370;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x4FE1;&#x606F;&#x6700;&#x5168;&#x9762;
+         *
+         */</span>
+</code></pre>
+<h1 id="9&#x3001;finally&#x5173;&#x952E;&#x5B57;">9&#x3001;finally&#x5173;&#x952E;&#x5B57;</h1>
+<p>finally&#x5173;&#x952E;&#x5B57;&#x548C;try/catch&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;finally&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x65E0;&#x8BBA;&#x5F02;&#x5E38;&#x65F6;&#x5019;&#x53D1;&#x751F;&#x90FD;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">try</span>{
+          &#x53EF;&#x80FD;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;
+       }<span class="hljs-keyword">catch</span>{
+           &#x5F02;&#x5E38;&#x5904;&#x7406;
+       }<span class="hljs-keyword">finally</span>{
+           &#x65E0;&#x8BBA;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#xFF0C;&#x90FD;&#x4F1A;&#x6267;&#x884C;
+       }
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x200B;    1&#x3001;finally&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x80FD;&#x5355;&#x72EC;&#x7528;</p>
+<p>&#x200B;    2&#x3001;finally&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x8D44;&#x6E90;&#x56DE;&#x6536;</p>
+<p>&#x200B;    <strong>3&#x3001;&#x522B;&#x518D;finally&#x91CC;&#x5199;return&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F;finally&#x91CC;&#x7684;&#x5185;&#x5BB9;</strong></p>
+<h1 id="10&#x3001;&#x591A;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x4E0E;&#x5904;&#x7406;">10&#x3001;&#x591A;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x4E0E;&#x5904;&#x7406;</h1>
+<p>&#x6709;&#x4E09;&#x79CD;&#x5904;&#x7406;&#x601D;&#x8DEF;</p>
+<h2 id="101&#x3001;&#x591A;&#x4E2A;&#x5F02;&#x5E38;&#x5206;&#x522B;&#x5904;&#x7406;">10.1&#x3001;&#x591A;&#x4E2A;&#x5F02;&#x5E38;&#x5206;&#x522B;&#x5904;&#x7406;</h2>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> {
+       <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+       System.out.println(arr[<span class="hljs-number">3</span>]);
+}<span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException e){
+    System.out.println(e);
+     }
+</code></pre>
+<p>&#x5373;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x6355;&#x83B7;&#x548C;&#x5904;&#x7406;&#x5F02;&#x5E38;</p>
+<h2 id="102&#x3001;&#x591A;&#x5F02;&#x5E38;&#x4E00;&#x6B21;&#x6355;&#x83B7;&#xFF0C;&#x591A;&#x6B21;&#x5904;&#x7406;">10.2&#x3001;&#x591A;&#x5F02;&#x5E38;&#x4E00;&#x6B21;&#x6355;&#x83B7;&#xFF0C;&#x591A;&#x6B21;&#x5904;&#x7406;</h2>
+<p>&#x5373;&#x4E00;&#x6B21;&#x6355;&#x83B7;&#x6240;&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x518D;&#x6328;&#x4E2A;&#x5904;&#x7406;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+        System.out.println(arr[<span class="hljs-number">3</span>]);
+        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+        list.add(<span class="hljs-number">1</span>);
+        list.add(<span class="hljs-number">2</span>);
+        list.add(<span class="hljs-number">3</span>);
+        System.out.println(list.get(<span class="hljs-number">3</span>));
+    }<span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException e){
+        System.out.println(e);
+    }<span class="hljs-keyword">catch</span> (IndexOutOfBoundsException e){
+        System.out.println(e);
+}
+</code></pre>
+<p>try&#x4E2D;&#x4EE3;&#x7801;&#x4F1A;&#x4EA7;&#x751F;&#x4E24;&#x4E2A;&#x5F02;&#x5E38;&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E24;&#x4E2A;catch&#x5904;&#x7406;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x591A;&#x4E2A;catch&#x4E2D;&#x7684;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#x5982;&#x679C;&#x6709;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#xFF0C;&#x5B50;&#x7C7B;&#x4E00;&#x5B9A;&#x8981;&#x5199;&#x4E0A;&#x9762;</p>
+<h2 id="103&#x3001;&#x591A;&#x5F02;&#x5E38;&#x4E00;&#x6B21;&#x6355;&#x83B7;&#x4E00;&#x6B21;&#x5904;&#x7406;">10.3&#x3001;&#x591A;&#x5F02;&#x5E38;&#x4E00;&#x6B21;&#x6355;&#x83B7;&#x4E00;&#x6B21;&#x5904;&#x7406;</h2>
+<pre><code class="lang-java">    <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+            System.out.println(arr[<span class="hljs-number">3</span>]);
+            List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+            list.add(<span class="hljs-number">1</span>);
+            list.add(<span class="hljs-number">2</span>);
+            list.add(<span class="hljs-number">3</span>);
+            System.out.println(list.get(<span class="hljs-number">3</span>));
+        }<span class="hljs-keyword">catch</span> (IndexOutOfBoundsException e){
+            System.out.println(e);
+        }
+        System.out.println(<span class="hljs-string">&quot;&#x540E;&#x7EED;&#x4EE3;&#x7801;&quot;</span>);
+</code></pre>
+<p>&#x4E00;&#x6B21;&#x6355;&#x83B7;&#x6240;&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x518D;&#x4E00;&#x6B21;&#x5168;&#x90E8;&#x5904;&#x7406;</p>
+<h1 id="11&#x3001;&#x7236;&#x5B50;&#x7C7B;&#x7684;&#x5F02;&#x5E38;">11&#x3001;&#x7236;&#x5B50;&#x7C7B;&#x7684;&#x5F02;&#x5E38;</h1>
+<p>&#x5982;&#x679C;&#x7236;&#x7C7B;&#x629B;&#x51FA;&#x4E86;&#x591A;&#x4E2A;&#x5F02;&#x5E38;&#xFF0C;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x629B;&#x51FA;&#x548C;&#x7236;&#x7C7B;&#x76F8;&#x540C;&#x7684;&#x5F02;&#x5E38;&#x6216;&#x662F;&#x7236;&#x7C7B;&#x5F02;&#x5E38;&#x7684;&#x5B50;&#x7C7B;&#x6216;&#x8005;&#x4E0D;&#x629B;&#x51FA;
+&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x8BE5;&#x65B9;&#x6CD5;&#x65F6;&#x4E5F;&#x4E0D;&#x53EF;&#x80FD;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x6B64;&#x65F6;&#x5B50;&#x7C7B;&#x4EA7;&#x751F;&#x8BE5;&#x5F02;&#x5E38;&#xFF0C;&#x53EA;&#x80FD;&#x6355;&#x83B7;&#xFF0C;&#x4E0D;&#x80FD;&#x58F0;&#x660E;&#x629B;&#x51FA;</p>
+<p>&#x5373;&#x7236;&#x7C7B;&#x7684;&#x5F02;&#x5E38;&#x4EC0;&#x4E48;&#x6837;&#xFF0C;&#x5B50;&#x7C7B;&#x7684;&#x5F02;&#x5E38;&#x5C31;&#x58F0;&#x660E;&#x6837;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ZiFuExceptionDemo</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show01</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> NullPointerException,ClassCastException</span>{ }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show02</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IndexOutOfBoundsException</span>{ }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show03</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IndexOutOfBoundsException</span>{ }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show04</span><span class="hljs-params">()</span></span>{ }
+
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Zi</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ZiFuExceptionDemo</span></span>{
+    <span class="hljs-comment">//&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x629B;&#x51FA;&#x548C;&#x7236;&#x7C7B;&#x76F8;&#x540C;&#x7684;&#x5F02;&#x5E38;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show01</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> NullPointerException,ClassCastException</span>{ }
+    <span class="hljs-comment">//&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x629B;&#x51FA;&#x7236;&#x7C7B;&#x5F02;&#x5E38;&#x7684;&#x5B50;&#x7C7B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show02</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ArrayIndexOutOfBoundsException</span>{}
+    <span class="hljs-comment">//&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x629B;&#x51FA;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show03</span><span class="hljs-params">()</span></span>{}
+    <span class="hljs-comment">//&#x7236;&#x7C7B;&#x6CA1;&#x629B;&#x5F02;&#x5E38;&#xFF0C;&#x5B50;&#x7C7B;&#x4E5F;&#x4E0D;&#x80FD;&#x629B;&#xFF0C;&#x53EA;&#x80FD;&#x6355;&#x83B7;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show04</span><span class="hljs-params">()</span></span>{}
+}
+</code></pre>
+<h1 id="12&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;">12&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;</h1>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;&#x4F9B;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;</p>
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XXXException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span>/<span class="hljs-title">RuntimeException</span></span>{
+    &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x53C2;&#x6784;&#x9020;
+    &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E26;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x7684;&#x6784;&#x9020;
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x200B;        1&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x7C7B;&#x4E00;&#x822C;&#x4EE5;Exception&#x7ED3;&#x5C3E;&#xFF0C;&#x8BF4;&#x660E;&#x8BE5;&#x7C7B;&#x662F;&#x5F02;&#x5E38;&#x7C7B;</p>
+<p>&#x200B;        2&#x3001;&#x5FC5;&#x987B;&#x7EE7;&#x627F;Exception&#x6216;RuntimeException</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterExceptionDemo9</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span></span>{
+    <span class="hljs-comment">//&#x7A7A;&#x53C2;&#x6784;&#x9020;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">RegisterExceptionDemo9</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>();
+    }
+    <span class="hljs-comment">/**
+     * &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E26;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;
+     * &#x67E5;&#x770B;&#x6E90;&#x7801;&#x53D1;&#x73B0;&#xFF0C;&#x6240;&#x6709;&#x5F02;&#x5E38;&#x7C7B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5E26;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x7684;&#x6784;&#x9020;&#xFF0C;&#x65B9;&#x6CD5;&#x5185;&#x90E8;&#x4F1A;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x5E26;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x7684;&#x6784;&#x9020;&#xFF0C;&#x8BA9;&#x7236;&#x7C7B;&#x5904;&#x7406;
+     *
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">RegisterExceptionDemo9</span><span class="hljs-params">(String message)</span></span>{
+        <span class="hljs-keyword">super</span>(message);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="21、map集合.html" class="navigation navigation-prev " aria-label="Previous page: 21、map集合">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="23、线程实现.html" class="navigation navigation-next " aria-label="Next page: 23.线程实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"22、异常","level":"1.24","depth":1,"next":{"title":"23.线程实现","level":"1.25","depth":1,"path":"基础部分/23、线程实现.md","ref":"基础部分/23、线程实现.md","articles":[]},"previous":{"title":"21、map集合","level":"1.23","depth":1,"path":"基础部分/21、map集合.md","ref":"基础部分/21、map集合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/22、异常.md","mtime":"2020-03-27T02:04:21.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T03:26:55.095Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
