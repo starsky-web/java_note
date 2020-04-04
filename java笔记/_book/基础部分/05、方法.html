@@ -553,6 +553,20 @@
 <p>&#x8C03;&#x7528;&#x65F6;&#x8981;&#x5B58;&#x5728;&#x53D8;&#x91CF;&#x91CC;</p>
 <pre><code class="lang-java"><span class="hljs-keyword">double</span> bigcir = bb(<span class="hljs-number">8</span>);
 </code></pre>
+<h1 id="2&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;overload">2&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;(overload)</h1>
+<p>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x4E24;&#x4E2A;&#x540D;&#x5B57;&#x76F8;&#x540C;&#x4F46;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6784;&#x6210;&#x91CD;&#x8F7D;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x54EA;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x6267;&#x884C;</p>
+<p>&#x91CD;&#x8F7D;&#x4E0E;&#x4E0B;&#x5217;&#x56E0;&#x7D20;&#x76F8;&#x5173;</p>
+<ol>
+<li>&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;</li>
+<li>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;</li>
+<li>&#x53C2;&#x6570;&#x7684;&#x591A;&#x7C7B;&#x578B;&#x987A;&#x5E8F;&#x4E0D;&#x540C;</li>
+</ol>
+<p>&#x4E0E;&#x4E0B;&#x5217;&#x56E0;&#x7D20;&#x65E0;&#x5173;</p>
+<ol>
+<li>&#x4E0E;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x65E0;&#x5173;</li>
+<li>&#x4E0E;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x65E0;&#x5173;</li>
+</ol>
+<p>&#x91CD;&#x8F7D;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x8C03;&#x7528;&#x8005;&#xFF0C;&#x8BA9;&#x8C03;&#x7528;&#x8005;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8BB0;&#x90A3;&#x4E48;&#x591A;&#x65B9;&#x6CD5;&#x540D;&#x5B57;</p>
 
                                 
                                 </section>
@@ -596,7 +610,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5、方法","level":"1.7","depth":1,"next":{"title":"6、面向对象","level":"1.8","depth":1,"path":"基础部分/06、面向对象.md","ref":"基础部分/06、面向对象.md","articles":[]},"previous":{"title":"4、数组","level":"1.6","depth":1,"path":"基础部分/04、数组.md","ref":"基础部分/04、数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/05、方法.md","mtime":"2020-03-27T02:10:37.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-03T15:18:24.401Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5、方法","level":"1.7","depth":1,"next":{"title":"6、面向对象","level":"1.8","depth":1,"path":"基础部分/06、面向对象.md","ref":"基础部分/06、面向对象.md","articles":[]},"previous":{"title":"4、数组","level":"1.6","depth":1,"path":"基础部分/04、数组.md","ref":"基础部分/04、数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/05、方法.md","mtime":"2020-04-04T07:13:27.156Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-04T07:13:58.767Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -607,10 +621,6 @@
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
