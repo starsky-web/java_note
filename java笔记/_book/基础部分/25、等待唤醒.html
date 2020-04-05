@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1、线程状态 · java笔记</title>
+        <title>25、等待唤醒 · java笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -440,7 +440,7 @@
                 <a href="25、等待唤醒.html">
             
                     
-                    1、线程状态
+                    25、等待唤醒
             
                 </a>
             
@@ -453,7 +453,20 @@
                 <a href="26、线程池.html">
             
                     
-                    1、概述
+                    26、线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="27、Lambda表达式.html">
+            
+                <a href="27、Lambda表达式.html">
+            
+                    
+                    27、lambda表达式
             
                 </a>
             
@@ -491,7 +504,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1、线程状态</a>
+        <a href=".." >25、等待唤醒</a>
     </h1>
 </div>
 
@@ -506,7 +519,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;">1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;</h1>
+                                <h1 id="25&#x3001;&#x7B49;&#x5F85;&#x5524;&#x9192;">25&#x3001;&#x7B49;&#x5F85;&#x5524;&#x9192;</h1>
+<hr>
+<h1 id="1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;">1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;</h1>
 <p>&#x8BA1;&#x65F6;&#x7B49;&#x5F85;&#x72B6;&#x6001;</p>
 <p>&#x9501;&#x963B;&#x585E;&#x72B6;&#x6001;</p>
 <p><strong>&#x65E0;&#x9650;&#x7B49;&#x5F85;&#x72B6;&#x6001;</strong>(&#x8C03;&#x7528;wait&#x65B9;&#x6CD5;&#x7B49;&#x5F85;&#xFF0C;&#x7B49;notify&#x65B9;&#x6CD5;&#x5524;&#x9192;)</p>
@@ -610,7 +625,7 @@
                 </a>
                 
                 
-                <a href="26、线程池.html" class="navigation navigation-next " aria-label="Next page: 1、概述">
+                <a href="26、线程池.html" class="navigation navigation-next " aria-label="Next page: 26、线程池">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -621,7 +636,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1、线程状态","level":"1.27","depth":1,"next":{"title":"1、概述","level":"1.28","depth":1,"path":"基础部分/26、线程池.md","ref":"基础部分/26、线程池.md","articles":[]},"previous":{"title":"24、线程安全","level":"1.26","depth":1,"path":"基础部分/24、java线程安全.md","ref":"基础部分/24、java线程安全.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/25、等待唤醒.md","mtime":"2020-04-02T07:16:47.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-04T07:13:58.767Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"25、等待唤醒","level":"1.27","depth":1,"next":{"title":"26、线程池","level":"1.28","depth":1,"path":"基础部分/26、线程池.md","ref":"基础部分/26、线程池.md","articles":[]},"previous":{"title":"24、线程安全","level":"1.26","depth":1,"path":"基础部分/24、java线程安全.md","ref":"基础部分/24、java线程安全.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/25、等待唤醒.md","mtime":"2020-04-05T11:13:19.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-05T11:14:17.712Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -632,6 +647,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
