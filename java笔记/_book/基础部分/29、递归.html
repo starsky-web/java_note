@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5、方法 · java笔记</title>
+        <title>29、递归 · java笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="06、面向对象.html" />
     
-    
-    <link rel="prev" href="04、数组.html" />
+    <link rel="prev" href="28、File类.html" />
     
 
     </head>
@@ -175,7 +173,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="05、方法.html">
+        <li class="chapter " data-level="1.7" data-path="05、方法.html">
             
                 <a href="05、方法.html">
             
@@ -487,7 +485,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.31" data-path="29、递归.html">
+        <li class="chapter active" data-level="1.31" data-path="29、递归.html">
             
                 <a href="29、递归.html">
             
@@ -530,7 +528,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >5、方法</a>
+        <a href=".." >29、递归</a>
     </h1>
 </div>
 
@@ -545,67 +543,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="5&#x3001;&#x65B9;&#x6CD5;">5&#x3001;&#x65B9;&#x6CD5;</h1>
+                                <h1 id="29&#x3001;&#x9012;&#x5F52;">29&#x3001;&#x9012;&#x5F52;</h1>
 <hr>
-<h1 id="1&#x3001;&#x65B9;&#x6CD5;">1&#x3001;&#x65B9;&#x6CD5;</h1>
-<p>&#x548C;main&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;</p>
-<p>&#x65B9;&#x6CD5;&#x4E94;&#x8981;&#x7D20;&#xFF1A;</p>
-<ol>
-<li>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x4FEE;&#x9970;&#x7B26;(public static)&#xFF0C;&#x53EF;&#x5199;&#x53EF;&#x4E0D;&#x5199;</li>
-<li>&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;(void)&#xFF0C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7EDF;&#x4E00;&#x7528;void&#xFF0C;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x7528;&#x5177;&#x4F53;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x3002;</li>
-<li>&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;(main)(&#x7B26;&#x5408;&#x6807;&#x8BC6;&#x7B26;)</li>
-<li>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;(String[] args)&#xFF0C;&#x5982;&#x65E0;&#x53C2;&#x6570;&#xFF0C;&#x5C0F;&#x62EC;&#x53F7;&#x4E2D;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x5199;&#xFF0C;&#x6709;&#x53C2;&#x6570;&#x5219;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4EFB;&#x610F;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4EFB;&#x610F;</li>
-<li>&#x65B9;&#x6CD5;&#x4F53;(&#x5927;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x5185;&#x5BB9;)&#xFF0C;&#x529F;&#x80FD;&#x6027;&#x4EE3;&#x7801;</li>
-</ol>
-<p>[&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x4FEE;&#x9970;&#x7B26;]  &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;   &#x65B9;&#x6CD5;&#x540D;&#x79F0;([&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;]) {&#x65B9;&#x6CD5;&#x4F53;}</p>
-<h2 id="1&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x5206;&#x7C7B;">1&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x5206;&#x7C7B;</h2>
-<p>&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;  &#x6CA1;&#x6709;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">aa</span><span class="hljs-params">()</span></span>{
-        System.out.println(<span class="hljs-string">&quot;&#x6211;&#x662F;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x7684;&#x989D;&#x65B9;&#x6CD5;&quot;</span>);
-    }
-</code></pre>
-<p>main&#x65B9;&#x6CD5;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x5165;&#x53E3;&#xFF0C;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x8981;&#x5728;main&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
-<p>&#x65E0;&#x53C2;&#x6570;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#xFF1A;&#x65B9;&#x6CD5;&#x540D;&#x79F0;()</p>
-<p>&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6709;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x63D0;&#x9AD8;&#x4E86;&#x53C2;&#x6570;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF09;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">aa</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a)</span> </span>{
-        <span class="hljs-keyword">if</span>(a&gt;<span class="hljs-number">0</span>) {
-            System.out.println(<span class="hljs-string">&quot;a&#x662F;&#x6B63;&#x6570;&quot;</span>);
-        }
-        <span class="hljs-keyword">else</span> {
-            System.out.println(<span class="hljs-string">&quot;a&#x662F;&#x8D1F;&#x6570;&quot;</span>);
-        }
-    }
-</code></pre>
-<p>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5224;&#x65AD;&#x6B63;&#x8D1F;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">aa(<span class="hljs-number">100</span>);
-</code></pre>
-<p>&#x8C03;&#x7528;&#x4F20;&#x9012;&#x7684;&#x79F0;&#x4E3A;&#x5B9E;&#x53C2;&#xFF0C;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;a&#x79F0;&#x4E3A;&#x5F62;&#x53C2;</p>
-<p>&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x548C;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> <span class="hljs-title">bb</span><span class="hljs-params">(<span class="hljs-keyword">double</span> r)</span> </span>{
-        <span class="hljs-keyword">double</span> pi = Math.PI;
-        <span class="hljs-keyword">double</span> sum = pi * (r*r);
-        <span class="hljs-keyword">return</span> sum;
-
-    }
-</code></pre>
-<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</p>
-<p>&#x8C03;&#x7528;&#x65F6;&#x8981;&#x5B58;&#x5728;&#x53D8;&#x91CF;&#x91CC;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">double</span> bigcir = bb(<span class="hljs-number">8</span>);
-</code></pre>
-<h1 id="2&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;overload">2&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x91CD;&#x8F7D;(overload)</h1>
-<p>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x4E24;&#x4E2A;&#x540D;&#x5B57;&#x76F8;&#x540C;&#x4F46;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x6784;&#x6210;&#x91CD;&#x8F7D;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x54EA;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x6267;&#x884C;</p>
-<p>&#x91CD;&#x8F7D;&#x4E0E;&#x4E0B;&#x5217;&#x56E0;&#x7D20;&#x76F8;&#x5173;</p>
-<ol>
-<li>&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;</li>
-<li>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;</li>
-<li>&#x53C2;&#x6570;&#x7684;&#x591A;&#x7C7B;&#x578B;&#x987A;&#x5E8F;&#x4E0D;&#x540C;</li>
-</ol>
-<p>&#x4E0E;&#x4E0B;&#x5217;&#x56E0;&#x7D20;&#x65E0;&#x5173;</p>
-<ol>
-<li>&#x4E0E;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x65E0;&#x5173;</li>
-<li>&#x4E0E;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x65E0;&#x5173;</li>
-</ol>
-<p>&#x91CD;&#x8F7D;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x8C03;&#x7528;&#x8005;&#xFF0C;&#x8BA9;&#x8C03;&#x7528;&#x8005;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8BB0;&#x90A3;&#x4E48;&#x591A;&#x65B9;&#x6CD5;&#x540D;&#x5B57;</p>
+<h1 id="1&#x3001;&#x6982;&#x8FF0;">1&#x3001;&#x6982;&#x8FF0;</h1>
+<p>&#x9012;&#x5F52;&#x662F;&#x6307;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x73B0;&#x8C61;</p>
+<h1 id="2&#x3001;&#x5206;&#x7C7B;">2&#x3001;&#x5206;&#x7C7B;</h1>
+<p><strong>&#x76F4;&#x63A5;&#x9012;&#x5F52;</strong>&#xFF1A;&#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x81EA;&#x5DF1;</p>
+<p><strong>&#x95F4;&#x63A5;&#x9012;&#x5F52;</strong>&#xFF1A;A&#x65B9;&#x6CD5;&#x8C03;&#x7528;B&#x65B9;&#x6CD5;&#xFF0C;B&#x65B9;&#x6CD5;&#x8C03;&#x7528;C&#x65B9;&#x6CD5;&#xFF0C;C&#x65B9;&#x6CD5;&#x8C03;&#x7528;A&#x65B9;&#x6CD5;</p>
+<h1 id="3&#x3001;&#x6CE8;&#x610F;">3&#x3001;&#x6CE8;&#x610F;</h1>
+<p>&#x9012;&#x5F52;&#x8981;&#x6709;&#x6761;&#x4EF6;&#x9650;&#x5B9A;&#xFF0C;&#x4FDD;&#x8BC1;&#x9012;&#x5F52;&#x53EF;&#x4EE5;&#x505C;&#x4E0B;&#x6765;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x6808;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</p>
+<p>&#x9012;&#x5F52;&#x6B21;&#x6570;&#x592A;&#x591A;&#x4E5F;&#x53EF;&#x80FD;&#x4F1A;&#x6808;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</p>
+<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x7981;&#x6B62;&#x9012;&#x5F52;</p>
+<h1 id="4&#x3001;&#x4F7F;&#x7528;&#x524D;&#x63D0;">4&#x3001;&#x4F7F;&#x7528;&#x524D;&#x63D0;</h1>
+<p>&#x5F53;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x4F53;&#x4E0D;&#x53D8;&#xFF0C;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x9012;&#x5F52;</p>
 
                                 
                                 </section>
@@ -633,14 +583,10 @@
 
             
                 
-                <a href="04、数组.html" class="navigation navigation-prev " aria-label="Previous page: 4、数组">
+                <a href="28、File类.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 28、File类">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="06、面向对象.html" class="navigation navigation-next " aria-label="Next page: 6、面向对象">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -649,7 +595,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5、方法","level":"1.7","depth":1,"next":{"title":"6、面向对象","level":"1.8","depth":1,"path":"基础部分/06、面向对象.md","ref":"基础部分/06、面向对象.md","articles":[]},"previous":{"title":"4、数组","level":"1.6","depth":1,"path":"基础部分/04、数组.md","ref":"基础部分/04、数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/05、方法.md","mtime":"2020-04-04T07:13:27.156Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T08:06:23.255Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"29、递归","level":"1.31","depth":1,"previous":{"title":"28、File类","level":"1.30","depth":1,"path":"基础部分/28、File类.md","ref":"基础部分/28、File类.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/29、递归.md","mtime":"2020-04-07T09:53:04.714Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T08:06:23.255Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
