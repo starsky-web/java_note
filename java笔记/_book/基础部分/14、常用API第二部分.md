@@ -426,3 +426,13 @@ public class translateDemo {
 
 ```
 
+## 6.3、拓展
+
+**Character类中的方法**
+
+```java
+static boolean isDigit(char ch)判断是不是数字
+static boolean isLetter(char ch)判断是不是字母
+static boolean isLetter(char ch)判断是不是数字或字母
+```
+
