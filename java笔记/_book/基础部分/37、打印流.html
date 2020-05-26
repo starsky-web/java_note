@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>20、Collections工具类 · java笔记</title>
+        <title>37、打印流 · java笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="21、map集合.html" />
     
-    
-    <link rel="prev" href="19、set集合.html" />
+    <link rel="prev" href="36、序列化流.html" />
     
 
     </head>
@@ -370,7 +368,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.22" data-path="20、Collections工具类.html">
+        <li class="chapter " data-level="1.22" data-path="20、Collections工具类.html">
             
                 <a href="20、Collections工具类.html">
             
@@ -591,7 +589,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.39" data-path="37、打印流.html">
+        <li class="chapter active" data-level="1.39" data-path="37、打印流.html">
             
                 <a href="37、打印流.html">
             
@@ -634,7 +632,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >20、Collections工具类</a>
+        <a href=".." >37、打印流</a>
     </h1>
 </div>
 
@@ -649,33 +647,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="20&#x3001;collections&#x5DE5;&#x5177;&#x7C7B;">20&#x3001;Collections&#x5DE5;&#x5177;&#x7C7B;</h1>
+                                <h1 id="37&#x3001;&#x6253;&#x5370;&#x6D41;">37&#x3001;&#x6253;&#x5370;&#x6D41;</h1>
 <hr>
-<h1 id="1&#x3001;collections&#x662F;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x7EC4;&#x7684;&#x5DE5;&#x5177;&#x7C7B;">1&#x3001;Collections&#x662F;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x7EC4;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</h1>
-<h1 id="2&#x3001;addall&#x65B9;&#x6CD5;">2&#x3001;addALL&#x65B9;&#x6CD5;</h1>
-<p>&#x540C;&#x65F6;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x96C6;&#x5408;&#x4E2D;&#xFF0C;&#x9759;&#x6001;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java">Collections.addAll(list,<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-string">&quot;c&quot;</span>,<span class="hljs-string">&quot;d&quot;</span>,<span class="hljs-string">&quot;e&quot;</span>);
+<h1 id="1&#x3001;&#x6982;&#x8FF0;">1&#x3001;&#x6982;&#x8FF0;</h1>
+<p>PrintStream&#x4F4D;&#x4E8E;IO&#x5305;&#xFF0C;&#x7EE7;&#x627F;&#x4E86;OutputStream&#xFF0C;&#x4E3A;&#x5176;&#x4ED6;&#x8F93;&#x51FA;&#x6D41;&#x6DFB;&#x52A0;&#x4E86;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x4ED6;&#x4EEC;&#x80FD;&#x591F;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x6253;&#x5370;&#x5404;&#x79CD;&#x6570;&#x636E;&#x503C;&#x8868;&#x793A;&#x5F62;&#x5F0F;</p>
+<h1 id="2&#x3001;&#x7279;&#x70B9;">2&#x3001;&#x7279;&#x70B9;</h1>
+<p>&#x53EA;&#x8D1F;&#x8D23;&#x6570;&#x636E;&#x8F93;&#x51FA;&#xFF0C;&#x4E0D;&#x8D1F;&#x8D23;&#x8BFB;&#x53D6;</p>
+<p>&#x4E0D;&#x4F1A;&#x629B;&#x51FA;IO&#x5F02;&#x5E38;</p>
+<p>&#x7279;&#x6709;&#x65B9;&#x6CD5;&#x6709;print&#x548C;println</p>
+<h1 id="3&#x3001;&#x6784;&#x9020;">3&#x3001;&#x6784;&#x9020;</h1>
+<pre><code class="lang-java">PrintStream(OutputStream out)
+<span class="hljs-comment">//&#x8F93;&#x51FA;&#x76EE;&#x7684;&#x5730;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x8F93;&#x51FA;&#x6D41;</span>
+PrintStream(File file)
+<span class="hljs-comment">//&#x76EE;&#x7684;&#x5730;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span>
+PrintStream(String fileName)
+<span class="hljs-comment">//&#x76EE;&#x7684;&#x5730;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
 </code></pre>
-<p>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x5217;&#x8868;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;</p>
-<h1 id="3&#x3001;shuffle&#x65B9;&#x6CD5;">3&#x3001;shuffle&#x65B9;&#x6CD5;</h1>
-<p>&#x6253;&#x4E71;&#x96C6;&#x5408;&#x7684;&#x987A;&#x5E8F;</p>
-<pre><code class="lang-java">Collections.shuffle(list);
-</code></pre>
-<p>&#x53C2;&#x6570;&#x65B9;&#x5F0F;&#x96C6;&#x5408;&#x7684;&#x540D;&#x5B57;</p>
-<h1 id="4&#x3001;sort&#x65B9;&#x6CD5;">4&#x3001;sort&#x65B9;&#x6CD5;</h1>
-<p>&#x628A;&#x5143;&#x7D20;&#x6309;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#xFF08;&#x5347;&#x5E8F;&#xFF09;&#x6392;&#x5E8F;</p>
-<p>&#x5982;&#x679C;&#x8981;&#x6392;&#x5217;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#xFF0C;&#x91CD;&#x5199;&#x63A5;&#x53E3;&#x4E2D;&#x7684;compareTo&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java">Collections.sort(list3);
-</code></pre>
-<p>&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x6784;&#x9020;&#x5668;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;</p>
-<pre><code class="lang-java">Collections.sort(list4, <span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() {
-            <span class="hljs-meta">@Override</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{
-                <span class="hljs-keyword">return</span> o1-o2;
-            }
-        });
-</code></pre>
-<p>&#xFF08;&#x8F83;&#x590D;&#x6742;&#xFF09;</p>
+<h1 id="4&#x3001;&#x6CE8;&#x610F;">4&#x3001;&#x6CE8;&#x610F;</h1>
+<ol>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x81EA;&#x7236;&#x7C7B;&#x7684;write&#x65B9;&#x6CD5;&#x5199;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x67E5;&#x770B;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x67E5;&#x8BE2;&#x7F16;&#x7801;&#x8868;</li>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;print/println&#x5199;&#x6570;&#x636E;&#xFF0C;&#x5199;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x539F;&#x6837;&#x8F93;&#x51FA;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;System.setOut&#x65B9;&#x6CD5;&#x66F4;&#x6539;&#x8F93;&#x51FA;&#x8BED;&#x53E5;&#x7684;&#x76EE;&#x7684;&#x5730;</li>
+</ol>
 
                                 
                                 </section>
@@ -703,14 +696,10 @@
 
             
                 
-                <a href="19、set集合.html" class="navigation navigation-prev " aria-label="Previous page: 19、set集合">
+                <a href="36、序列化流.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 36、序列化流">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="21、map集合.html" class="navigation navigation-next " aria-label="Next page: 21、map集合">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -719,7 +708,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"20、Collections工具类","level":"1.22","depth":1,"next":{"title":"21、map集合","level":"1.23","depth":1,"path":"基础部分/21、map集合.md","ref":"基础部分/21、map集合.md","articles":[]},"previous":{"title":"19、set集合","level":"1.21","depth":1,"path":"基础部分/19、set集合.md","ref":"基础部分/19、set集合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/20、Collections工具类.md","mtime":"2020-05-09T15:28:39.032Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-26T08:15:30.882Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"37、打印流","level":"1.39","depth":1,"previous":{"title":"36、序列化流","level":"1.38","depth":1,"path":"基础部分/36、序列化流.md","ref":"基础部分/36、序列化流.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/37、打印流.md","mtime":"2020-05-12T05:39:10.211Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-26T08:15:30.882Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
