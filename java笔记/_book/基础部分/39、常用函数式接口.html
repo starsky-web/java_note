@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>25、等待唤醒 · java笔记</title>
+        <title>39、常用函数式接口 · java笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="26、线程池.html" />
+    <link rel="next" href="40、Stream流式编程.html" />
     
     
-    <link rel="prev" href="24、java线程安全.html" />
+    <link rel="prev" href="38、网络编程.html" />
     
 
     </head>
@@ -435,7 +435,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.27" data-path="25、等待唤醒.html">
+        <li class="chapter " data-level="1.27" data-path="25、等待唤醒.html">
             
                 <a href="25、等待唤醒.html">
             
@@ -617,7 +617,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.41" data-path="39、常用函数式接口.html">
+        <li class="chapter active" data-level="1.41" data-path="39、常用函数式接口.html">
             
                 <a href="39、常用函数式接口.html">
             
@@ -686,7 +686,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >25、等待唤醒</a>
+        <a href=".." >39、常用函数式接口</a>
     </h1>
 </div>
 
@@ -701,80 +701,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="25&#x3001;&#x7B49;&#x5F85;&#x5524;&#x9192;">25&#x3001;&#x7B49;&#x5F85;&#x5524;&#x9192;</h1>
+                                <h1 id="39&#x3001;&#x5E38;&#x7528;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;">39&#x3001;&#x5E38;&#x7528;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;</h1>
 <hr>
-<h1 id="1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;">1&#x3001;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;</h1>
-<p>&#x8BA1;&#x65F6;&#x7B49;&#x5F85;&#x72B6;&#x6001;</p>
-<p>&#x9501;&#x963B;&#x585E;&#x72B6;&#x6001;</p>
-<p><strong>&#x65E0;&#x9650;&#x7B49;&#x5F85;&#x72B6;&#x6001;</strong>(&#x8C03;&#x7528;wait&#x65B9;&#x6CD5;&#x7B49;&#x5F85;&#xFF0C;&#x7B49;notify&#x65B9;&#x6CD5;&#x5524;&#x9192;)</p>
-<h1 id="2&#x3001;&#x7761;&#x7720;&#x548C;&#x5524;&#x9192;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;">2&#x3001;&#x7761;&#x7720;&#x548C;&#x5524;&#x9192;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</h1>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * &#x7B49;&#x5F85;&#x5524;&#x9192;&#x673A;&#x5236;&#xFF1A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;
- *      &#x6A21;&#x62DF;&#x987E;&#x5BA2;&#x548C;&#x8001;&#x677F;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x6613;&#x8FC7;&#x7A0B;
- *      &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x987E;&#x5BA2;&#x7EBF;&#x7A0B;&#xFF0C;&#x544A;&#x77E5;&#x8001;&#x677F;&#x8981;&#x7684;&#x5305;&#x5B50;&#x79CD;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x7B49;&#x5F85;&#x5524;&#x9192;
- *      &#x8001;&#x677F;&#x82B1;&#x4E94;&#x79D2;&#x5B8C;&#x6210;
- *
- *&#x6CE8;&#x610F;&#xFF1A;
- *      &#x987E;&#x5BA2;&#x548C;&#x8001;&#x677F;&#x7EBF;&#x7A0B;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4FDD;&#x8BC1;&#x7B49;&#x5F85;&#x548C;&#x5524;&#x9192;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6267;&#x884C;
- *      &#x540C;&#x6B65;&#x7528;&#x7684;&#x9501;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x552F;&#x4E00;
- *      &#x53EA;&#x6709;&#x9501;&#x5BF9;&#x8C61;&#x624D;&#x80FD;&#x8C03;&#x7528;wait&#x548C;notify&#x65B9;&#x6CD5;
- *
- *      void wait(); &#x7B49;&#x5F85;
- *      void notify(); &#x5524;&#x9192;&#x5BF9;&#x8C61;&#x76D1;&#x89C6;&#x5668;&#x4E0A;&#x7B49;&#x5F85;&#x7684;&#x67D0;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;wait&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;
- *
- *
- */</span>
+<h1 id="1&#x3001;&#x6982;&#x8FF0;">1&#x3001;&#x6982;&#x8FF0;</h1>
+<p>&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;</p>
+<p>&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x6027;&#x80FD;&#x6D6A;&#x8D39;</p>
+<p>&#x4E00;&#x822C;&#x4F5C;&#x4E3A;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x4F7F;&#x7528;</p>
+<p>lambda&#x8868;&#x8FBE;&#x5F0F;&#x6709;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x7279;&#x6027;</p>
+<p>&#x4F8B;&#x5982;&#x4F7F;&#x7528;lambda&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x53EA;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x624D;&#x4F1A;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x6267;&#x884C;</p>
+<h1 id="2&#x3001;consumer&#x63A5;&#x53E3;">2&#x3001;Consumer&#x63A5;&#x53E3;</h1>
+<p>&#x8BE5;&#x63A5;&#x53E3;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x6027;&#x63A5;&#x53E3;&#xFF0C;&#x6CDB;&#x578B;&#x6307;&#x5B9A;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x5185;&#x7684;accept&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</p>
+<h2 id="21&#x3001;andthen&#x65B9;&#x6CD5;">2.1&#x3001;andThen&#x65B9;&#x6CD5;</h2>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x9700;&#x8981;&#x4E24;&#x4E2A;Consumer&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E24;&#x4E2A;Consumer&#x63A5;&#x53E3;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;</p>
+<p>&#x8FDE;&#x63A5;&#x4E24;&#x4E2A;Consumer&#x63A5;&#x53E3;&#xFF0C;&#x8C01;&#x5728;&#x524D;&#x9762;&#x8C01;&#x5148;&#x6D88;&#x8D39;</p>
+<h1 id="3&#x3001;function&#x63A5;&#x53E3;">3&#x3001;Function&#x63A5;&#x53E3;</h1>
+<p>&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x5F97;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x6709;&#x4E24;&#x4E2A;&#x6CDB;&#x578B;&#xFF0C;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x4E2D;&#x7684;apply&#x65B9;&#x6CD5;</p>
+<p>&#x4F8B;&#x5982;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x6CDB;&#x578B;&#x7528;String&#x548C;Integer&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x90A3;&#x4E2A;&#x6574;&#x6570;&#x8F6C;&#x4E3A;Integer&#x7C7B;&#x578B;</p>
+<h2 id="31&#x3001;andthen&#x65B9;&#x6CD5;">3.1&#x3001;andThen&#x65B9;&#x6CD5;</h2>
+<p>&#x540C;&#x6837;&#x4E3A;&#x7EC4;&#x5408;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4E24;&#x6B21;&#x8F6C;&#x6362;</p>
+<h1 id="4&#x3001;predicate&#x63A5;&#x53E3;">4&#x3001;Predicate&#x63A5;&#x53E3;</h1>
+<p>&#x7528;&#x4E8E;&#x5BF9;&#x67D0;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x7ED3;&#x679C;</p>
+<p>&#x4F7F;&#x7528;test&#x65B9;&#x6CD5;</p>
+<p>&#x4F8B;&#x5982;&#x5224;&#x65AD;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</p>
+<h2 id="41&#x3001;&#x8FD0;&#x7B97;&#x7B26;">4.1&#x3001;&#x8FD0;&#x7B97;&#x7B26;</h2>
+<pre><code class="lang-java">&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;Predicate
+&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;or
+&#x53D6;&#x53CD; negate
 </code></pre>
-<p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1WaitAndNotify</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x9501;&#x5BF9;&#x8C61;</span>
-        Object obj = <span class="hljs-keyword">new</span> Object();
-        <span class="hljs-comment">//&#x4F7F;&#x7528;&#x533F;&#x540D;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x987E;&#x5BA2;&#x7EBF;&#x7A0B;</span>
-        <span class="hljs-keyword">new</span> Thread(){
-            <span class="hljs-meta">@Override</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-                <span class="hljs-comment">//&#x4FDD;&#x8BC1;&#x7B49;&#x5F85;&#x548C;&#x5524;&#x9192;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#xFF0C;&#x9700;&#x8981;&#x540C;&#x6B65;</span>
-                <span class="hljs-keyword">synchronized</span> (obj){
-                    System.out.println(<span class="hljs-string">&quot;&#x544A;&#x77E5;&#x8981;&#x6C42;&quot;</span>);
-                    <span class="hljs-comment">//&#x8C03;&#x7528;wait&#xFF0C;&#x8FDB;&#x5165;&#x7B49;&#x5F85;,wait&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x8981;&#x4F7F;&#x7528;trycatch</span>
-                    <span class="hljs-keyword">try</span> {
-                        obj.wait();
-                    } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(<span class="hljs-string">&quot;&#x5524;&#x9192;&#x5B8C;&#x6210;&quot;</span>);
-                }
-            }
-        }.start();
-
-
-        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x8001;&#x677F;&#x7EBF;&#x7A0B;</span>
-        <span class="hljs-keyword">new</span> Thread(){
-            <span class="hljs-meta">@Override</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-                <span class="hljs-comment">//&#x7761;5&#x79D2;</span>
-                <span class="hljs-keyword">try</span> {
-                    Thread.sleep(<span class="hljs-number">5000</span>);
-                } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                <span class="hljs-keyword">synchronized</span> (obj){
-                    System.out.println(<span class="hljs-string">&quot;&#x8001;&#x677F;&#x4E94;&#x79D2;&#x5B8C;&#x6210;&#xFF0C;&#x544A;&#x77E5;&#x987E;&#x5BA2;&quot;</span>);
-                    <span class="hljs-comment">//&#x5524;&#x9192;&#x987E;&#x5BA2;&#x7EBF;&#x7A0B;</span>
-                    obj.notify();
-                }
-            }
-        }.start();
-    }
-}
-</code></pre>
-<h1 id="3&#x3001;&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;&#x673A;&#x5236;">3&#x3001;&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;&#x673A;&#x5236;</h1>
-<p><strong>&#x6982;&#x5FF5;</strong>&#xFF1A;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x540C;&#x4E00;&#x8D44;&#x6E90;&#xFF0C;&#x4F46;&#x662F;&#x64CD;&#x4F5C;&#x4E0D;&#x540C;&#x3002;&#x6B64;&#x65F6;&#x9700;&#x8981;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x6765;&#x786E;&#x5B9A;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;</p>
-<p><strong>&#x610F;&#x4E49;</strong>&#xFF1A;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x65F6;&#xFF0C;CPU&#x662F;&#x968F;&#x673A;&#x5207;&#x6362;&#x8FDB;&#x7A0B;&#x7684;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5171;&#x540C;&#x5B8C;&#x6210;&#x4E00;&#x4EF6;&#x4EFB;&#x52A1;&#x4E14;&#x9700;&#x8981;&#x5404;&#x7EBF;&#x7A0B;&#x6709;&#x89C4;&#x5F8B;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;</p>
-<h1 id="4&#x3001;&#x7B49;&#x5F85;&#x4E0E;&#x5524;&#x9192;&#x673A;&#x5236;">4&#x3001;&#x7B49;&#x5F85;&#x4E0E;&#x5524;&#x9192;&#x673A;&#x5236;</h1>
-<p>wait&#x548C;notify&#x8981;&#x7531;&#x540C;&#x4E00;&#x4E2A;&#x9501;&#x5BF9;&#x8C61;&#x8C03;&#x7528;</p>
-<p>wait&#x548C;notify&#x5FC5;&#x987B;&#x5728;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#x6216;&#x540C;&#x6B65;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;</p>
+<h1 id="5&#x3001;supplier&#x63A5;&#x53E3;">5&#x3001;Supplier&#x63A5;&#x53E3;</h1>
+<p>&#x5E38;&#x7528;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#xFF0C;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A;&#x751F;&#x4EA7;&#x5668;&#x63A5;&#x53E3;</p>
 
                                 
                                 </section>
@@ -802,12 +758,12 @@
 
             
                 
-                <a href="24、java线程安全.html" class="navigation navigation-prev " aria-label="Previous page: 24、线程安全">
+                <a href="38、网络编程.html" class="navigation navigation-prev " aria-label="Previous page: 38、网络编程">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="26、线程池.html" class="navigation navigation-next " aria-label="Next page: 26、线程池">
+                <a href="40、Stream流式编程.html" class="navigation navigation-next " aria-label="Next page: 40、Stream流">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -818,7 +774,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"25、等待唤醒","level":"1.27","depth":1,"next":{"title":"26、线程池","level":"1.28","depth":1,"path":"基础部分/26、线程池.md","ref":"基础部分/26、线程池.md","articles":[]},"previous":{"title":"24、线程安全","level":"1.26","depth":1,"path":"基础部分/24、java线程安全.md","ref":"基础部分/24、java线程安全.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/25、等待唤醒.md","mtime":"2020-04-05T11:13:19.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-01T13:48:56.507Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"39、常用函数式接口","level":"1.41","depth":1,"next":{"title":"40、Stream流","level":"1.42","depth":1,"path":"基础部分/40、Stream流式编程.md","ref":"基础部分/40、Stream流式编程.md","articles":[]},"previous":{"title":"38、网络编程","level":"1.40","depth":1,"path":"基础部分/38、网络编程.md","ref":"基础部分/38、网络编程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["summary","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java笔记","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"基础部分/39、常用函数式接口.md","mtime":"2020-05-29T06:04:34.021Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-01T13:48:56.507Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
